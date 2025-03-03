@@ -1,0 +1,23 @@
+// const keyword
+
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+
+void main()
+{
+	const int MAX_AGE = 90;
+	
+	const int* a = new int;		// Way1 int const* a=new int;
+	// int* const a = new int;		Way2
+	// const int* const a = new int;	Way3, cannot change data or point to something else
+	
+	// changing the value, to which a is addressing to
+	*a = 2;				// Way1 cannot be done if const is infront, cannot modify the contents/data of the pointer
+
+	// changing the address of a addressing to
+	a = (int*)MAX_AGE;	// Way2 cannot be done, cannot modify the reference of the pointer
+	
+	cout<<"a= "<<*a<<endl;
+}
+
